@@ -1,24 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import Friend from './template/Friend';
+import Header from './template/Header';
+import Login from './template/Login';
+import Post from './template/Post';
+import Register from './template/Register';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {/* <Header /> */}
+      {/* <Friend /> */}
+      {/* <Post /> */}
+      {/* <Login /> */}
+      <Register />
+    </>
   );
 }
 

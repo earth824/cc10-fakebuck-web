@@ -2,14 +2,6 @@ import { Modal } from 'bootstrap';
 import { useRef } from 'react';
 
 function Header() {
-  const el = useRef();
-  const inputEl = useRef();
-
-  const handleClickProfile = () => {
-    const modal = new Modal(el.current);
-    modal.toggle();
-  };
-
   return (
     <>
       <nav className="navbar navbar-expand-sm sticky-top bg-white text-facebook">
@@ -36,11 +28,7 @@ function Header() {
               </li>
             </ul>
           </div>
-          <div
-            className="navbar-brand"
-            role="button"
-            onClick={handleClickProfile}
-          >
+          <div className="navbar-brand" role="button">
             <img
               src="https://images.pexels.com/photos/698532/pexels-photo-698532.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
               width="40"
@@ -51,7 +39,7 @@ function Header() {
         </div>
       </nav>
 
-      <div className="modal" ref={el}>
+      <div className="modal">
         <div className="modal-dialog">
           <div className="modal-content">
             <div className="modal-header">
@@ -64,14 +52,13 @@ function Header() {
             </div>
             <div className="modal-body">
               <div className="mt-4 mb-5 d-flex justify-content-center">
-                <input type="file" className="d-none" ref={inputEl} />
+                <input type="file" className="d-none" />
                 <img
                   src="https://images.pexels.com/photos/698532/pexels-photo-698532.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
                   width="200"
                   className="rounded-circle"
                   alt="user"
                   role="button"
-                  onClick={() => inputEl.current.click()}
                 />
               </div>
               <div className="d-grid">

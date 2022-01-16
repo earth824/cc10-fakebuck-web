@@ -2,18 +2,6 @@ import { Modal } from 'bootstrap';
 import { useRef, useState } from 'react';
 
 function Post() {
-  const [img, setImg] = useState('');
-  const el = useRef();
-
-  const handleClickCreatePost = () => {
-    const modal = new Modal(el.current);
-    modal.toggle();
-  };
-
-  const handleClickUpload = e => {
-    setImg(e.target.files[0]);
-  };
-
   return (
     <>
       <div className="container my-5">
@@ -33,7 +21,6 @@ function Post() {
                     type="text"
                     className="form-control rounded-pill d-inline"
                     placeholder="What's on your mind?"
-                    onClick={handleClickCreatePost}
                   />
                   <div
                     className="position-absolute"
@@ -190,7 +177,7 @@ function Post() {
         </div>
       </div>
 
-      <div className="modal" ref={el}>
+      <div className="modal">
         <div className="modal-dialog">
           <div className="modal-content">
             <div className="modal-header">
@@ -208,20 +195,9 @@ function Post() {
                   rows="3"
                   placeholder="What's on your mind?"
                 />
-                {img && (
-                  <img
-                    // src="https://i.imgur.com/4qPVarB.png"
-                    src={URL.createObjectURL(img)}
-                    className="img-fluid"
-                    alt="user"
-                  />
-                )}
+
                 <div className="input-group mt-3">
-                  <input
-                    type="file"
-                    className="form-control"
-                    onChange={handleClickUpload}
-                  />
+                  <input type="file" className="form-control" />
                   <button className="btn btn-outline-danger" type="button">
                     Remove
                   </button>

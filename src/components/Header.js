@@ -1,24 +1,44 @@
 import { Modal } from 'bootstrap';
-import { useEffect, useRef, useState } from 'react';
+import { useContext, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../contexts/AuthContext';
+import defaultProfile from '../assets/images/blank.png';
+import axios from '../config/axios';
+import Spinner from './Spinner';
 
 function Header() {
-  const [profileImg, setProfileImg] = useState(
-    'https://images.pexels.com/photos/698532/pexels-photo-698532.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500'
-  );
-
+  const [profileImg, setProfileImg] = useState(defaultProfile);
   const [newProfileImg, setNewProfileImg] = useState(null);
+  const [modal, setModal] = useState(null);
+  const [loading, setLoading] = useState(false);
+
+  const { logout } = useContext(AuthContext);
 
   const el = useRef();
   const inputEl = useRef();
 
   const handleClickProfile = () => {
     const modal = new Modal(el.current);
-    modal.toggle();
+    setModal(modal);
+    modal.show();
+  };
+
+  const handleClickUpdate = () => {
+    setLoading(true);
+    const formData = new FormData();
+    formData.append('profileImg', newProfileImg);
+
+    axios.patch('/users/profile-img', formData).then(res => {
+      setNewProfileImg(null);
+      setProfileImg(res.data.profileImg);
+      modal.hide();
+      setLoading(false);
+    });
   };
 
   return (
     <>
+      {loading && <Spinner />}
       <nav className="navbar navbar-expand-sm sticky-top bg-white text-facebook">
         <div className="container-fluid">
           <Link to="/" className="navbar-brand">
@@ -37,7 +57,11 @@ function Header() {
                 </Link>
               </li>
               <li className="nav-item mx-5">
-                <div className="nav-link" role="button">
+                <div
+                  className="nav-link"
+                  role="button"
+                  onClick={() => logout()}
+                >
                   <i className="fas fa-sign-out-alt fs-2"></i>
                 </div>
               </li>
@@ -67,6 +91,7 @@ function Header() {
                 type="button"
                 className="btn-close"
                 data-bs-dismiss="modal"
+                onClick={() => setNewProfileImg(null)}
               ></button>
             </div>
             <div className="modal-body">
@@ -92,7 +117,12 @@ function Header() {
                 />
               </div>
               <div className="d-grid">
-                <button type="button" className="btn btn-primary">
+                <button
+                  type="button"
+                  className="btn btn-primary"
+                  onClick={handleClickUpdate}
+                  disabled={!newProfileImg}
+                >
                   Update
                 </button>
               </div>

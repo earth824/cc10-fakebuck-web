@@ -31,9 +31,10 @@ function Header() {
       const res = await axios.patch('/users/profile-img', formData);
       updateUser({ profileImg: res.data.profileImg });
       modal.hide();
-      setLoading(false);
     } catch (err) {
       console.log(err);
+    } finally {
+      setLoading(false);
     }
   };
 

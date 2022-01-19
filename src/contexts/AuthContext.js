@@ -6,13 +6,16 @@ const AuthContext = createContext();
 
 function AuthContextProvider({ children }) {
   const [user, setUser] = useState(null);
+  const [initializing, setInitializing] = useState(false);
 
   useEffect(() => {
     if (getToken()) {
+      setInitializing(true);
       axios
         .get('/users/me')
         .then(res => setUser(res.data.user))
-        .catch(err => console.log(err));
+        .catch(err => console.log(err))
+        .finally(() => setInitializing(false));
     }
   }, []);
 
@@ -39,7 +42,9 @@ function AuthContextProvider({ children }) {
   };
 
   return (
-    <AuthContext.Provider value={{ user, login, logout, updateUser }}>
+    <AuthContext.Provider
+      value={{ user, login, logout, updateUser, initializing }}
+    >
       {children}
     </AuthContext.Provider>
   );

@@ -23,10 +23,17 @@ function PostWrapper() {
     console.log(res.data);
   };
 
+  const deletePost = async id => {
+    await axios.delete('/posts/' + id);
+
+    const res = await axios.get('/posts');
+    setPosts(res.data.posts);
+  };
+
   return (
     <>
       <PostForm createPost={createPost} />
-      <PostList posts={posts} />
+      <PostList posts={posts} deletePost={deletePost} />
     </>
   );
 }

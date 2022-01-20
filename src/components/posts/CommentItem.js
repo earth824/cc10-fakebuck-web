@@ -1,8 +1,17 @@
-function CommentItem() {
+import defaultImg from '../../assets/images/profileImg.png';
+import timeSince from '../../services/timeSince';
+
+function CommentItem({
+  comment: {
+    User: { profileImg, firstName, lastName },
+    createdAt,
+    title
+  }
+}) {
   return (
     <div className="d-flex flex-row mb-3">
       <img
-        src="https://i.imgur.com/9AZ2QX1.jpg"
+        src={profileImg ?? defaultImg}
         width="30"
         height="30"
         className="rounded-circle"
@@ -10,11 +19,13 @@ function CommentItem() {
       />
       <div className="d-flex flex-column ms-2">
         <div>
-          <span className="fw-bold text-facebook">Sarah Jane</span>
+          <span className="fw-bold text-facebook">
+            {firstName} {lastName}
+          </span>
           <span className="ms-2 text-muted fw-bolder">&bull;</span>
-          <span className="ms-2 text-muted fs-7">4 hours ago</span>
+          <span className="ms-2 text-muted fs-7">{timeSince(createdAt)}</span>
         </div>
-        <span>I like this alot! thanks alot</span>
+        <span>{title}</span>
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-function PostAction() {
+function PostAction({ numComment, toggleShowComment, toggleShowForm }) {
   return (
     <>
       <div className="d-flex justify-content-between align-items-center">
@@ -10,8 +10,8 @@ function PostAction() {
           />
           <small className="ms-2 text-muted">You and 90 others</small>
         </div>
-        <div className="text-muted">
-          <small>2 comments</small>
+        <div className="text-muted" role="button" onClick={toggleShowComment}>
+          <small>{numComment} comments</small>
         </div>
       </div>
       <hr className="m-2" />
@@ -20,7 +20,11 @@ function PostAction() {
           <i className="far fa-thumbs-up" />
           <small className="ms-2 fs-6">Like</small>
         </div>
-        <div className="text-center flex-grow-1">
+        <div
+          className="text-center flex-grow-1"
+          role="button"
+          onClick={toggleShowForm}
+        >
           <i className="far fa-comment-alt" />
           <small className="ms-2 fs-6 text-muted">Comment</small>
         </div>

@@ -1,15 +1,8 @@
-function PostContent() {
+function PostContent({ post: { title, img } }) {
   return (
     <>
-      <p className="text-justify px-3 py-1">
-        Our key visual. Does not really convey the look of the game, but rather
-        the atmosphere.
-      </p>
-      <img
-        src="https://i.imgur.com/4qPVarB.png"
-        className="img-fluid"
-        alt="user"
-      />
+      {title && <p className="text-justify px-3 py-1">{title}</p>}
+      {img && <img src={img} className="img-fluid" alt="post-img" />}
     </>
   );
 }

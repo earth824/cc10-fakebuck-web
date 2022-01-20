@@ -2,12 +2,12 @@ import PostHeader from './PostHeader';
 import PostContent from './PostContent';
 import PostFooter from './PostFooter';
 
-function PostCard() {
+function PostCard({ post }) {
   return (
     <div className="card mt-4">
-      <PostHeader />
-      <PostContent />
-      <PostFooter />
+      <PostHeader post={post} />
+      <PostContent post={post} />
+      <PostFooter post={post} />
     </div>
   );
 }

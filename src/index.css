@@ -12,29 +12,6 @@ body {
   background-color: #18191a;
 }
 
-.fsr-15 {
-  font-size: 1.5rem;
-}
-
-.fsr-175 {
-  font-size: 1.75rem;
-}
-
-.nav-link.active {
-  color: #129cf7 !important;
-  border-bottom: 3px solid #129cf7;
-}
-
-.nav-link:hover:not(.active) {
-  background-color: #3a3b3c;
-  border-radius: 8px;
-}
-
-.navbar-brand img {
-  width: 2.5rem;
-  height: 2.5rem;
-}
-
 .text-facebook {
   color: #129cf7;
 }
@@ -43,23 +20,77 @@ body {
   background-color: #242526;
 }
 
-.header-dropdown-item {
-  color: #cecece;
+.bg-facebook-dark-1 {
+  background-color: #4e4f50;
+}
+
+.fsr-1125 {
+  font-size: 1.125rem;
+}
+
+.fsr-15 {
+  font-size: 1.5rem;
+}
+
+.fsr-175 {
+  font-size: 1.75rem;
+}
+
+.pyr-075 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.navbar-brand img {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.nav-link.active {
+  color: #129cf7 !important;
+  border-bottom: 4px solid #129cf7;
+}
+
+.nav-link:hover:not(.active) {
+  background-color: #3a3b3c;
+  border-radius: 8px;
+}
+
+.header-item-btn {
+  color: #e7e9ed;
   background-color: #3a3b3c;
   width: 2.5rem;
   height: 2.5rem;
 }
 
-.header-dropdown-item:hover {
-  color: #cecece;
+.header-item-btn:hover {
+  color: #e7e9ed;
   background-color: #4e4f50;
 }
 
-.header-dropdown-item:focus {
+.header-item-btn:focus {
   background-color: rgba(45, 136, 255, 0.2);
   color: #129cf7;
 }
 
-.header-dropdown-item:focus:hover {
+.header-item-btn:focus:hover {
   background-color: #3c4d63;
+}
+
+.header-item-menu {
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  min-width: 360px;
+}
+
+.header-item-menu .dropdown-item:focus,
+.header-item-menu .dropdown-item:hover,
+.header-item-menu .dropdown-item:active {
+  color: #e7e9ed;
+  background-color: #3a3b3c;
+  border-radius: 8px;
 }

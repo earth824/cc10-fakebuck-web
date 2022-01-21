@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +9,57 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #18191a;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.fsr-15 {
+  font-size: 1.5rem;
+}
+
+.fsr-175 {
+  font-size: 1.75rem;
+}
+
+.nav-link.active {
+  color: #129cf7 !important;
+  border-bottom: 3px solid #129cf7;
+}
+
+.nav-link:hover:not(.active) {
+  background-color: #3a3b3c;
+  border-radius: 8px;
+}
+
+.navbar-brand img {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.text-facebook {
+  color: #129cf7;
+}
+
+.bg-facebook-dark {
+  background-color: #242526;
+}
+
+.header-dropdown-item {
+  color: #cecece;
+  background-color: #3a3b3c;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.header-dropdown-item:hover {
+  color: #cecece;
+  background-color: #4e4f50;
+}
+
+.header-dropdown-item:focus {
+  background-color: rgba(45, 136, 255, 0.2);
+  color: #129cf7;
+}
+
+.header-dropdown-item:focus:hover {
+  background-color: #3c4d63;
 }

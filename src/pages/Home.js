@@ -89,6 +89,25 @@ function Home() {
           </div>
         </nav>
       </header>
+
+      <main className="container my-4 maxw-600">
+        <section className="card rounded-5">
+          <div className="card-body d-flex">
+            <a href="/#">
+              <img
+                className="rounded-circle"
+                src="https://images.pexels.com/photos/654690/pexels-photo-654690.jpeg"
+                width="40"
+                height="40"
+                alt="user"
+              />
+            </a>
+            <button className="button-new-post ms-2 btn shadow-none rounded-pill flex-grow-1 text-start text-muted">
+              What's on your mind, Han?
+            </button>
+          </div>
+        </section>
+      </main>
     </>
   );
 }

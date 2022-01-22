@@ -29,6 +29,10 @@ body {
   padding-bottom: 0.75rem;
 }
 
+.rounded-5 {
+  border-radius: 0.5rem;
+}
+
 .maxw-600 {
   max-width: 600px;
 }
@@ -83,4 +87,12 @@ body {
 
 .menu-icon > ul .dropdown-item:active {
   color: inherit;
+}
+
+.button-new-post {
+  background-color: rgba(108, 117, 125, 0.1);
+}
+
+.button-new-post:hover {
+  background-color: rgba(108, 117, 125, 0.2);
 }

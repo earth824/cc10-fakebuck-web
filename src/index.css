@@ -12,6 +12,14 @@ body {
   background-color: #f0f2f5;
 }
 
+.fsr-075 {
+  font-size: 0.75rem;
+}
+
+.fsr-0875 {
+  font-size: 0.875rem;
+}
+
 .fsr-1125 {
   font-size: 1.125rem;
 }
@@ -35,6 +43,20 @@ body {
 
 .maxw-600 {
   max-width: 600px;
+}
+
+.squarer-225 {
+  width: 2.25rem;
+  height: 2.25rem;
+}
+
+.squarer-25 {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.flex-basis-50 {
+  flex-basis: 50%;
 }
 
 .navbar-brand img {
@@ -89,10 +111,31 @@ body {
   color: inherit;
 }
 
-.button-new-post {
+.new-post-open {
   background-color: rgba(108, 117, 125, 0.1);
 }
 
-.button-new-post:hover {
+.new-post-open:hover {
   background-color: rgba(108, 117, 125, 0.2);
+}
+
+.post-user:hover,
+.post-time:hover {
+  text-decoration: underline !important;
+}
+
+.post-action:hover {
+  background-color: #f2f2f2;
+}
+
+.post-response img:hover {
+  cursor: pointer;
+}
+
+.post-response button:hover {
+  text-decoration: underline;
+}
+
+.post-response-action button:hover {
+  background-color: #f2f2f2;
 }
